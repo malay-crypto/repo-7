@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+{%  load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static   'css/bootstrap.min.css' %} " rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Log In</title>
+</head>
+<body>
+    <section id="nav-bar" class="about">
+		<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="index.html"><img src="{%  static   'image/images.png' %}" alt="logo"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto  nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" href="#footer">ABOUT</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</section>
+    
+    
+    <section class="pt-5 container">
+        <div class="row shadow bg-white rounded">
+            <div class="col-lg-6 p-auto text-center" id="bd">
+
+                    <h3 class="my-5" style="font-family: 'Bebas Neue', cursive;">Log In</h3>
+
+                {% if mess  %}
+                    <div class="alert alert-danger" role="alert">
+                     {{mess}}
+                    </div>
+                {%  endif  %}
+
+                    <form action="/loginvalidation/" class="px-5" method="post">
+                        {%  csrf_token %}
+                        <div class="col-md-12 form-group">
+                            <input type="text" class="form-control"  name="uname" placeholder="UserID or Email"
+                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'UserID or Email'">
+                        </div>
+                       
+                        <div class="col-md-12 form-group">
+                            <input type="text" class="form-control"  name="password" placeholder="Password"
+                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
+                        </div>
+                        
+                        <div class="col-md-12 form-group text-left">
+                                <input type="checkbox" name="rememberme">
+                                <label for="f-option2">Keep me logged in</label>
+                        </div>
+                        <div class="col-md-12 mb-5 form-group">
+
+                            <button type="submit" value="submit" class="w-100 btn btn-primary">Log In</button>
+                        </div>
+                    </form>
+
+            </div>
+            <div class="col-lg-6 p-5 text-center ref">
+                <div class="py-5">
+                        <h4 class="pt-4">Don't have account?</h4>
+                        <p class="pb-5">There are advances being made in science and technology everyday, and a good example of this
+                            is the</p>
+                       <a href="/register" class="btn btn-danger border-white w-75">Register</a>
+                       </div>
+            </div>
+        </div>
+
+</section>
+
+<footer class="pt-5 text-white" id="footer">
+    <div class="footer-area bg-info py-3">
+        <div class="container">
+            <div class="row pt-5">
+                <div class="col-sm-4 px-4">
+                    <h1>Our Mission</h1>
+                    <p><br>So seed seed green that winged cattle in. Gathering thing made fly you're no 
+                        divided deep moved us lan Gathering thing us land years living.<br><br>
+                        So seed seed green that winged cattle in. Gathering thing made fly you're no divided deep moved</p>
+                </div>
+                <div class="col-sm-4 px-4">
+                    <h3>Quick Links</h3>
+                    <ul><br>
+                        <li><a>Home</a></li>
+                        <li><a>Home</a></li>
+                        <li><a>Home</a></li>
+                        <li><a>Home</a></li>
+                        <li><a>Home</a></li>
+        
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <h2>Contact Us</h2>
+                    <dl><br>
+                        <dt>Main Office</dt>
+                        <dd>TMSL, Kolkata, West Bengal, India 777777</dd>
+                        <dt>Phone Number</dt>
+                        <dd>6518647521<br>6294593250</dd>
+                        <dt>Email</dt>
+                        <dd>xxxxx@gmail.com<br>asingha826@gmail.com</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer-bottom bg-secondary">
+        <div class="text-right container py-1">
+                <p>
+                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+                </p>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function () {
+
+        window.setTimeout(function() {
+            $(".alert").fadeTo("slow", 0).slideUp(100, function(){
+                $(this).remove();
+            });
+        }, 2000);
+
+});
+</script>
+
+</body>
+</html>

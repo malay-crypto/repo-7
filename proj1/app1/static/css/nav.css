@@ -1,0 +1,15 @@
+.navbar{
+	background-image: linear-gradient(to right,#7a5def,#0c0c0c);
+}
+.navbar-brand img{
+	height: 60px;
+	padding-left: 20px;
+	padding-bottom:0px;
+}
+.navbar-nav li{
+	padding: 0px 10px;
+}
+.navbar-nav li a{
+	color: #fff !important;
+	font-weight: 600;
+}
